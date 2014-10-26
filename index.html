@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Выбор пола</title>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+
+	<style>
+		.wrap {
+			text-align: center;
+			float: left;
+		}
+		.woman-choice, .man-choice {
+			display: none;
+			float: left;
+		}
+		img {
+			display: none;
+			margin: auto;
+		}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<h1>Выберите свой пол:</h1> 
+		<input type="button" value="Женщина" id="woman"> <br> <br>
+		<input type="button" value="Мужчина" id="man">
+		<br> <br>
+		<div class="woman-choice">
+			<h2>Что будем делать?</h2>
+			<input type="button" class="choice1" value='Рожать'> <br> <br>
+			<input type="button" class="choice2" value='Приготовить покушать'> <br>
+		</div>
+		
+		<div class="man-choice">
+			<h2>Что будем делать?</h2>
+			<input type="button" value="Воевать" class="choice1">
+			<br> <br>
+			<input type="button" value="Работать" class="choice2">
+		</div>
+	</div>
+	<br>
+	<div class="result">
+		<img src="babe.jpg" alt="">
+		<img src="food.jpg" alt="">
+		<img src="soldiers.jpg" alt="">
+		<img src="work.jpg" alt="">
+	</div>
+
+	<script>
+		$(function () {
+
+$('#woman').click(function () {
+	$('img').css({'display':'none'});
+	$('.woman-choice').css({'display':'block'});
+	$('.man-choice').css({'display':'none'});
+});
+$('#man').click(function () {
+	$('img').css({'display':'none'});
+	$('.man-choice').css({'display':'block'});
+	$('.woman-choice').css({'display':'none'});
+});
+
+$('.woman-choice .choice1').click(function  () {
+	$('img').css({'display':'none'});
+	$("img[src='babe.jpg']").css({'display':'block'});
+
+});
+$('.woman-choice .choice2').click(function  () {
+	$('img').css({'display':'none'});
+	$('img[src="food.jpg"]').css({'display':'block'});
+});
+
+$('.man-choice .choice1').click(function  () {
+	$('img').css({'display':'none'});
+	$("img[src='soldiers.jpg']").css({'display':'block'});
+
+});
+$('.man-choice .choice2').click(function  () {
+	$('img').css({'display':'none'});
+	$('img[src="work.jpg"]').css({'display':'block'});
+});
+
+});
+
+	</script>
+</body>
+</html>
